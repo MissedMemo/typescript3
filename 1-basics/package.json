@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "build": "tsc -w src/*.ts --outDir dist",
-    "start": "lite-server --baseDir='dist'"
+    "build": "tsc src/*.ts --outDir dist",
+    "runIt": "lite-server --baseDir='dist'",
+    "start": "yarn build && yarn runIt"
   },
   "devDependencies": {
     "lite-server": "^2.4.0",
