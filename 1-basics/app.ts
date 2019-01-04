@@ -1,3 +1,5 @@
 let someNum = 2
 
-someNum = 'someString'
+let root = document.createElement('div')
+root.innerText = 'Bye!'
+document.body.appendChild(root)

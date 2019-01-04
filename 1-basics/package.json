@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "tsc -w app",
     "start": "lite-server"
   },
   "devDependencies": {
