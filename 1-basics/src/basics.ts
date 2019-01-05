@@ -51,9 +51,8 @@ member = 'Bob'
 member = { name: 'Fritz', age: 67 }
 // member = true
 
-*/
-
-
 let root = document.createElement('div')
-root.innerText = 'Bye!'
+root.innerText = 'Exploring Basics!'
 document.body.appendChild(root)
+
+*/
