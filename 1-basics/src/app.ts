@@ -45,7 +45,14 @@ type objAlias = { name: string, age: number }
 const obj1: objAlias = { name: 'Bob', age: 24 }
 const obj2: objAlias = { name: 'Sally', age: 88 }
 
+let member: number | string | objAlias
+member = 42
+member = 'Bob'
+member = { name: 'Fritz', age: 67 }
+// member = true
+
 */
+
 
 let root = document.createElement('div')
 root.innerText = 'Bye!'
