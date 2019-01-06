@@ -20,6 +20,18 @@ Pete.name = 'Joe'
 // console.log('coolness:', Pete.isCool ) inaccessible!
 console.log('revised Person:', Pete )
 
+class Boxer extends Person {
+  skills: string[]
+
+  constructor( name: string, nickname: string, age: number, skills: string[] ) {
+    super( name, nickname, age )
+    this.skills = [...skills]
+  }
+}
+
+const boxer = new Boxer('Joe Louis', 'The Brown Bomber', 134, ['jabs', 'left hook'])
+console.log('derived boxer:', boxer )
+
 let root = document.createElement('div')
 root.innerText = 'Exploring Classes!'
 document.body.appendChild(root)
