@@ -104,7 +104,7 @@ monsters.forEach( monster => console.log('monster:', monster, 'monster says:', m
 
 class Singleton {
   private static instance: Singleton
-  private constructor( public demoString: string ) {}
+  private constructor( public readonly demoString: string ) {}
 
   static Instance = (demoText: string) => {
     if ( !Singleton.instance ) {
