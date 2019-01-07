@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tsc src/*.ts --outDir dist",
+    "build": "tsc --target ES2018 src/*.ts --outDir dist",
     "runIt": "lite-server --baseDir='dist'",
     "start": "yarn build && yarn runIt"
   },

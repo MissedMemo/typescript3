@@ -1,3 +1,4 @@
+/*
 class Person {
   name: string // defaults to public
 
@@ -31,6 +32,31 @@ class Boxer extends Person {
 
 const boxer = new Boxer('Joe Louis', 'The Brown Bomber', 134, ['jabs', 'left hook'])
 console.log('derived boxer:', boxer )
+*/
+
+class Animal {
+  private _name: string = 'default'
+
+  get name() {
+    return this._name
+  }
+
+  set name( newName: string ) {
+    this._name = newName
+  }
+
+  constructor( newName: string ) {
+    this.name = newName
+  }
+}
+
+const animal = new Animal('giraffe')
+console.log('animal is a:', animal.name )
+animal.name = 'lion'
+console.log('animal is a:', animal.name )
+
+
+
 
 let root = document.createElement('div')
 root.innerText = 'Exploring Classes!'
