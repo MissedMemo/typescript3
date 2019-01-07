@@ -65,32 +65,42 @@ console.log( 'some delicious pi:', StaticStuff.pi )
 console.log( 'some magic cake:', StaticStuff.cake )
 */
 
-abstract class Thing {
+type size = {
+  height_inMeters: number,
+  length_inMeters: number,
+  weight_inTons: number
+}
+
+abstract class Creature {
   name: string
-  dimensions: number[]
-  color: string
+  abode: string
+  size: size
 
-  abstract makeSound: () => string
+  abstract makeNoise: () => string
 
-  constructor( name: string, dimensions: number[], color?: string ) {
+  constructor( name: string, size: size, abode?: string ) {
     this.name = name
-    this.dimensions = [...dimensions]
-    this.color = color
+    this.size = {...size}
+    this.abode = abode
   }
 }
 
-class Globule extends Thing {
-  texture: string
-  makeSound = () => 'Roar!!!'
+class MediaMonster extends Creature {
+  yearCreated: string
+  makeNoise = () => 'Roar!!!' // bad example
 
-  constructor( texture: string, name: string, dimensions: number[], color?: string ) {
-    super(name, dimensions, color)
-    this.texture = texture
+  constructor( yearCreated: string, name: string, size: size, abode?: string ) {
+    super(name, size, abode)
+    this.yearCreated = yearCreated
   }
 }
 
-const blob = new Globule( 'smooth', 'Goopy', [4,5,6] )
-console.log('blob is:', blob)
+const monsters: MediaMonster[] = [
+  new MediaMonster( '1954', 'Godzilla', { height_inMeters: 50, length_inMeters: 50, weight_inTons: 1000}, 'Tokyo' ),
+  new MediaMonster( '1961', 'Mothra', { height_inMeters: 10, length_inMeters: 100, weight_inTons: 800}, 'some Pacific island' )
+]
+
+monsters.forEach( monster => console.log('monster:', monster, 'monster says:', monster.makeNoise() ) )
 
 
 let root = document.createElement('div')
