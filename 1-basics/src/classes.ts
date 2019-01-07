@@ -53,7 +53,6 @@ const animal = new Animal('giraffe')
 console.log('animal is a:', animal.name )
 animal.name = 'lion'
 console.log('animal is a:', animal.name )
-*/
 
 class StaticStuff {
   static readonly pi = 3.14
@@ -64,6 +63,34 @@ class StaticStuff {
 // StaticStuff.pi = 6.28 (inaccessible!)
 console.log( 'some delicious pi:', StaticStuff.pi )
 console.log( 'some magic cake:', StaticStuff.cake )
+*/
+
+abstract class Thing {
+  name: string
+  dimensions: number[]
+  color: string
+
+  abstract makeSound: () => string
+
+  constructor( name: string, dimensions: number[], color?: string ) {
+    this.name = name
+    this.dimensions = [...dimensions]
+    this.color = color
+  }
+}
+
+class Globule extends Thing {
+  texture: string
+  makeSound = () => 'Roar!!!'
+
+  constructor( texture: string, name: string, dimensions: number[], color?: string ) {
+    super(name, dimensions, color)
+    this.texture = texture
+  }
+}
+
+const blob = new Globule( 'smooth', 'Goopy', [4,5,6] )
+console.log('blob is:', blob)
 
 
 let root = document.createElement('div')
