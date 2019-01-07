@@ -32,7 +32,6 @@ class Boxer extends Person {
 
 const boxer = new Boxer('Joe Louis', 'The Brown Bomber', 134, ['jabs', 'left hook'])
 console.log('derived boxer:', boxer )
-*/
 
 class Animal {
   private _name: string = 'default'
@@ -54,8 +53,17 @@ const animal = new Animal('giraffe')
 console.log('animal is a:', animal.name )
 animal.name = 'lion'
 console.log('animal is a:', animal.name )
+*/
 
+class StaticStuff {
+  static readonly pi = 3.14
 
+  static get cake() { return 42 }
+}
+
+// StaticStuff.pi = 6.28 (inaccessible!)
+console.log( 'some delicious pi:', StaticStuff.pi )
+console.log( 'some magic cake:', StaticStuff.cake )
 
 
 let root = document.createElement('div')
