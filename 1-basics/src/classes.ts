@@ -100,7 +100,6 @@ const monsters: MediaMonster[] = [
 ]
 
 monsters.forEach( monster => console.log('monster:', monster, 'monster says:', monster.makeNoise() ) )
-*/
 
 class Singleton {
   private static instance: Singleton
@@ -123,3 +122,4 @@ console.log( 'singleton 2:', s2 )
 let root = document.createElement('div')
 root.innerText = 'Exploring Classes!'
 document.body.appendChild(root)
+*/
