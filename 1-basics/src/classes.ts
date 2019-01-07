@@ -63,7 +63,6 @@ class StaticStuff {
 // StaticStuff.pi = 6.28 (inaccessible!)
 console.log( 'some delicious pi:', StaticStuff.pi )
 console.log( 'some magic cake:', StaticStuff.cake )
-*/
 
 type size = {
   height_inMeters: number,
@@ -101,7 +100,25 @@ const monsters: MediaMonster[] = [
 ]
 
 monsters.forEach( monster => console.log('monster:', monster, 'monster says:', monster.makeNoise() ) )
+*/
 
+class Singleton {
+  private static instance: Singleton
+  private constructor( public demoString: string ) {}
+
+  static Instance = (demoText: string) => {
+    if ( !Singleton.instance ) {
+      Singleton.instance = new Singleton(demoText)
+    }
+    return Singleton.instance
+  }
+}
+
+// const sX = new Singleton('invalid')
+const s1 = Singleton.Instance('number 1')
+const s2 = Singleton.Instance('number 2')
+console.log( 'singleton 1:', s1 )
+console.log( 'singleton 2:', s2 )
 
 let root = document.createElement('div')
 root.innerText = 'Exploring Classes!'
