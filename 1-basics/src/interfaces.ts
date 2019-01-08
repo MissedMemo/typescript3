@@ -1,4 +1,4 @@
-
+/*
 interface IDrivable {
   groundspeed_inKPH: number
 }
@@ -33,3 +33,4 @@ console.log('my plane:', myPlane )
 let root = document.createElement('div')
 root.innerText = 'Exploring Interfaces!'
 document.body.appendChild(root)
+*/
