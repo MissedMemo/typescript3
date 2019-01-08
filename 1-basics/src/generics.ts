@@ -22,7 +22,6 @@ const arr3: ReadonlyArray<string> = ['Five', 'Six', 'One Hundred']
 console.log( 'arr1:', arr1 )
 console.log( 'arr2:', arr2 )
 console.log( 'arr3:', arr3 )
-*/
 
 // Add constraints... 
 
@@ -58,6 +57,20 @@ const logRtn2 = <T extends IHasLength>(arg: T): T => {
 logRtn1([1,2,3])
 logRtn1('abc')
 //logRtn1(24)
+*/
+
+// stupid example to exercise class and multi-value generics...
+
+class Classy< T, U > {
+  greeting: string = 'Hello!'
+
+  constructor( public age: T, public name: U) {}
+
+  display = () => console.log(`${this.greeting}, ${this.name}. You are now ${this.age} years old!`)
+}
+
+const myClass = new Classy<number,string>(42,'Carl')
+myClass.display()
 
 let root = document.createElement('div')
 root.innerText = 'Exploring Generics!'
